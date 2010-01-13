@@ -6,6 +6,7 @@ h1. Features
 * Allows you to create a filmstrip gallery in Radiant and display on a page.
 * Loading order of images in the filmstrip can be adjusted using drag-and-drop reordering.
 * Filmstrip images are pulled-in to the Flash via and XML file produced in the *.rxml views in app/views/filmstrips.
+* Link field for images, so filmstrips can be clickable and link is accessible via rxml
 
 h1. Requirements
 

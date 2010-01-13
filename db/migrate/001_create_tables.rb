@@ -1,6 +1,7 @@
 class CreateTables < ActiveRecord::Migration
   def self.up
     create_table :fsimages do |t|
+      t.string    :url
       t.integer   :position
       t.string    :fsimage_file_name
       t.string    :fsimage_content_type

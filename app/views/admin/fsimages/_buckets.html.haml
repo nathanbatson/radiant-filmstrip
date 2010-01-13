@@ -1,12 +1,19 @@
 - form_for (:fsimage, :url => '/admin/fsimages/create', :html => {:multipart => true}) do |f|
-  Upload Images
+  Image
   = f.file_field :fsimage
+  %br
+  %br
+  Link
+  = f.text_field :url
+  %br
+  %br
   = f.submit "Upload"
 
 %ul#image-list
   - @fsimages.each do |fsimage|
     %li{ :class => "position_#{fsimage.position}", :id => "fsimage_#{fsimage.id}" }
       = link_to "#{image_tag("admin/icons-small/delete.png")}", "/admin/fsimages/remove/#{fsimage.id}", :confirm => "Are you sure you want to delete this fsimage?"
+      = link_to "#{image_tag("admin/icons-small/edit.png")}", "/admin/fsimages/editurl/#{fsimage.id}"
       %br
       = image_tag fsimage.fsimage.url(:thumb)
 

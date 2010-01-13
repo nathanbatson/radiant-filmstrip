@@ -1,0 +1,9 @@
+- form_for (@image, :url => "/admin/fsimages/update/#{@image.id}", :html => {:multipart => true}) do |f|
+  = image_tag @image.fsimage.url(:thumb)
+  %br
+  %br
+  Link
+  = f.text_field :url
+  %br
+  %br
+  = f.submit "Update"

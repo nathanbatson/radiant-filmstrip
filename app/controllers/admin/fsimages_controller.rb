@@ -46,13 +46,17 @@ class Admin::FsimagesController < ApplicationController
     @image = Fsimage.find(params[:id])
 
     respond_to do |format|
-      if @image.update_attributes(params[:image])
+      if @image.update_attributes(params[:fsimage])
         flash[:notice] = 'Filmstrip was successfully updated.'
-        format.html { redirect_to(@image) }
+        format.html { redirect_to :action => "index" }
       else
         format.html { render :action => "edit" }
       end
     end
+  end
+  
+  def editurl
+    @image = Fsimage.find(params[:id])
   end
 
   def update_positions
